@@ -1,0 +1,24 @@
+.DS_Store
+.svn
+CVS
+*~
+.*.swp
+tbGPSHist*.txt
+
+#RubyOnRails
+config/database.yml
+.bundle
+.project
+db/*.sqlite3
+log/*.log
+*.log
+/tmp/
+tmp/**/*
+*.tmproj
+doc/
+.idea
+.gitkeep
+.rspec
+Guardfile
+
+#Application Specific
