@@ -8,10 +8,7 @@ Rails backend for gpslogger
 - ruby1.9.3-p362
 - rails4.0.0
 - postgresql 9.3
-- rspec-core (2.14.6)
-- rspec-expectations (2.14.3)
-- rspec-mocks (2.14.4)
-- rspec-rails (2.14.0)
+- rspec 2.14
 
 ## Development
 
