@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021061740) do
+ActiveRecord::Schema.define(version: 20131021063527) do
 
   create_table "locations", force: true do |t|
     t.integer  "gps_timestamp", limit: 8, default: 0,   null: false
-    t.float    "gps_latitude",            default: 0.0, null: false
-    t.float    "gps_longitude",           default: 0.0, null: false
-    t.float    "gps_speed"
-    t.float    "gps_heading"
+    t.float    "latitude",                default: 0.0, null: false
+    t.float    "longitude",               default: 0.0, null: false
+    t.float    "speed"
+    t.float    "heading"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
