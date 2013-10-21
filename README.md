@@ -14,5 +14,10 @@ Rails backend for gpslogger
 
 ```
 % git clone https://github.com/rdeguzman/gpslogger-rails.git
+% cd gpslogger-rails
+% bundle install -V
+% bundle binstubs rspec-core #so it can be run via bin/rspec
+% rake db:setup
+% rspec .
 ```
 
