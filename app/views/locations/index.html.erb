@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>GPSTimestamp</th>
       <th>Latitude</th>
       <th>Longitude</th>
       <th>Speed</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @locations.each do |location| %>
       <tr>
+        <td><%= location.gps_timestamp %></td>
         <td><%= location.gps_latitude %></td>
         <td><%= location.gps_longitude %></td>
         <td><%= location.gps_speed %></td>
