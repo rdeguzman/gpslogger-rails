@@ -1,0 +1,11 @@
+development:
+  version: 0.1
+  google_maps_url: 'https://maps.googleapis.com/maps/api/js?v=3.13&key=[YOUR_KEY_HERE]&sensor=false'
+
+test:
+  version: 0.1
+  google_maps_url: 'https://maps.googleapis.com/maps/api/js?v=3.13&key=[YOUR_KEY_HERE]&sensor=false'
+
+production:
+  version: 0.1
+  google_maps_url: 'https://maps.googleapis.com/maps/api/js?v=3.13&key=[YOUR_KEY_HERE]&sensor=false'
