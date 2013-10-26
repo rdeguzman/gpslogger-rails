@@ -21,3 +21,20 @@ Rails backend for gpslogger
 % rspec .
 ```
 
+## Application Config
+Rails loads the application configuration from *config/config.yml*
+
+```
+development:
+  version: 0.1
+  google_maps_url: 'https://maps.googleapis.com/maps/api/js?v=3.13&key=[YOUR_KEY]&sensor=false'
+
+test:
+  version: 0.1
+  google_maps_url: 'https://maps.googleapis.com/maps/api/js?v=3.13&key=[YOUR_KEY]&sensor=false'
+
+production  :
+  version: 0.1
+  google_maps_url: 'https://maps.googleapis.com/maps/api/js?v=3.13&key=[YOUR_KEY]&sensor=false'
+```
+
