@@ -38,3 +38,9 @@ production  :
   google_maps_url: 'https://maps.googleapis.com/maps/api/js?v=3.13&key=[YOUR_KEY]&sensor=false'
 ```
 
+## Database Backup
+```
+pg_dump -h robin -U rupert -W gpslogger_production -F custom -f gpslogger.backup gpslogger_production
+pg_restore -h localhost -d gpslogger_development -F custom ./gpslogger_production.backup
+```
+
