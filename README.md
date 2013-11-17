@@ -16,10 +16,35 @@ Rails backend for gpslogger
 % git clone https://github.com/rdeguzman/gpslogger-rails.git
 % cd gpslogger-rails
 % bundle install -V
+% rake rails:update:bin         # Use the new Rails 4 executables
+      create  bin
+      create  bin/bundle
+      create  bin/rails
+      create  bin/rake
 % bundle binstubs rspec-core #so it can be run via bin/rspec
 % rake db:setup
 % rspec .
 ```
+
+In Rails 4, your app's bin/ directory contains executables that are versioned
+like any other source code, rather than stubs that are generated on demand.
+
+Here's how to upgrade:
+
+```
+  bundle config --delete bin    # Turn off Bundler's stub generator
+  rake rails:update:bin         # Use the new Rails 4 executables
+  git add bin                   # Add bin/ to source control
+```
+
+You may need to remove bin/ from your .gitignore as well.
+
+When you install a gem whose executable you want to use in your app,
+generate it and add it to source control:
+
+```
+  bundle binstubs some-gem-name
+```  
 
 ## Application Config
 Rails loads the application configuration from *config/config.yml*
