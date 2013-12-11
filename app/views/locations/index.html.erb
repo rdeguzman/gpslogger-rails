@@ -40,8 +40,6 @@
 
 <br>
 
-
-
 <script language="javascript">
   function initialize() {
     var mapOptions = {
@@ -51,22 +49,50 @@
     var map = new google.maps.Map(document.getElementById('mapdiv'), mapOptions);
     var pathBounds = new google.maps.LatLngBounds();
 
+    var paths = [];
     var path = [];
+    <% @locations.each_index do |i| %>
+      <% if i > 0 %>
+        <% previous = @locations[i-1] %>
+      <% else %>
+        <% previous = nil %>
+      <% end %>
 
-    <% @locations.each do |location| %>
-    path.push(new google.maps.LatLng(<%= location.gps_latitude %>, <%= location.gps_longitude %>));
-    pathBounds.extend(new google.maps.LatLng(<%= location.gps_latitude %>, <%= location.gps_longitude %>));
+      <% current = @locations[i] %>
+
+
+      <% if previous %>
+        var prev = new google.maps.LatLng(<%= previous.gps_latitude %>, <%= previous.gps_longitude %>);
+        var current = new google.maps.LatLng(<%= current.gps_latitude %>, <%= current.gps_longitude %>);
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(prev, current);
+
+        pathBounds.extend(current);
+
+        if(distance > 200){
+          if(path.length > 0){
+            paths.push(path);
+          }
+
+          var path = [];
+        }
+        else{
+          path.push(current);
+        }
+      <% end %>
+
     <% end %>
 
-    var flightPath = new google.maps.Polyline({
-      path: path,
-      geodesic: true,
-      strokeColor: '#FF0000',
-      strokeOpacity: 1.0,
-      strokeWeight: 2
-    });
+    for(var i=0; i<paths.length; i++){
+      var flightPath = new google.maps.Polyline({
+        path: paths[i],
+        geodesic: true,
+        strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+      });
 
-    flightPath.setMap(map);
+      flightPath.setMap(map);
+    }
     map.fitBounds(pathBounds);
   }
 
