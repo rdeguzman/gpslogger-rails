@@ -1,13 +1,7 @@
 default_run_options[:pty] = true
 
-if ENV['DEPLOY'] == 'PRODUCTION'
-  set :application, 'gpslogger'
-  set :rvm_ruby_string, 'ruby-1.9.3-p362@gpslogger'
-else
-  set :application, 'gpslogger-staging'
-  set :rvm_ruby_string, 'ruby-1.9.3-p362@gpslogger-staging'
-end
-
+set :application, 'gpslogger'
+set :rvm_ruby_string, 'ruby-1.9.3-p362@gpslogger'
 set :rvm_type, :user
 
 require 'bundler/capistrano'
