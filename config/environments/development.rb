@@ -26,4 +26,23 @@ Gpslogger::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config.action_mailer.default_url_options = { :host => '127.0.0.1:3000' }
+
+  #require 'tlsmail'
+  #Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+  #ActionMailer::Base.delivery_method = :smtp
+  #ActionMailer::Base.perform_deliveries = true
+  #ActionMailer::Base.raise_delivery_errors = true
+  #ActionMailer::Base.smtp_settings = {
+  #  :enable_starttls_auto => true,
+  #  :address            => 'smtp.gmail.com',
+  #  :port               => 587,
+  #  :tls                => true,
+  #  :domain             => 'gmail.com',
+  #  :authentication     => :plain,
+  #  :user_name          => 'rupert@2rmobile.com',
+  #  :password           => 'foobar' # for security reasons you can use a environment variable too. (ENV['INFO_MAIL_PASS'])
+  #}
+
 end

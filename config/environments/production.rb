@@ -77,4 +77,22 @@ Gpslogger::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.action_mailer.default_url_options = { :host => 'app.geocoding.io' }
+
+  #require 'tlsmail'
+  #Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+  #ActionMailer::Base.delivery_method = :smtp
+  #ActionMailer::Base.perform_deliveries = true
+  #ActionMailer::Base.raise_delivery_errors = true
+  #ActionMailer::Base.smtp_settings = {
+  #  :enable_starttls_auto => true,
+  #  :address            => 'smtp.gmail.com',
+  #  :port               => 587,
+  #  :tls                => true,
+  #  :domain             => 'gmail.com',
+  #  :authentication     => :plain,
+  #  :user_name          => 'rupert@2rmobile.com',
+  #  :password           => 'foobar' # for security reasons you can use a environment variable too. (ENV['INFO_MAIL_PASS'])
+  #}
 end
